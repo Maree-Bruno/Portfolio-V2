@@ -1,0 +1,101 @@
+//font-family
+@font-face {
+  font-family: 'League Spartan';
+  src: url('/wp-content/themes/portfolio/resources/fonts/LeagueSpartan-Bold.otf');
+}
+@font-face {
+  font-family: 'Titillium Web Bold';
+  src: url('/wp-content/themes/portfolio/resources/fonts/TitilliumWeb-Bold.ttf');
+}
+@font-face {
+  font-family: 'Titillium Web Regular';
+  src: url('/wp-content/themes/portfolio/resources/fonts/TitilliumWeb-Regular.ttf');
+}
+.font-title{
+  font-family: "League Spartan", sans-serif;
+}
+.font-span{
+  font-family: "Titillium Web Bold", sans-serif;
+}
+.font-text{
+  font-family: "Titillium Web Regular", sans-serif;
+}
+//sizing
+//12px
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+//14px
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+//16px
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+//18px
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+//20px
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+//24px
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+//30px
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+//36px
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+//48px
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+//64px
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+//72px
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+//80px
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+//96px
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+

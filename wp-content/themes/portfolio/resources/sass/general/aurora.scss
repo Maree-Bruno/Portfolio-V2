@@ -1,0 +1,33 @@
+.wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+}
+
+.lightings {
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.aurora {
+  height: 20px;
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.one {
+  animation: one 5s ease-in-out infinite alternate;
+}
+
+@keyframes one {
+  from {
+    box-shadow: 0 0 500px 50px #087CFA, 0 0 450px 40px #D9D9D9;
+  }
+  to {
+    box-shadow: 0 0 150px 30px #087CFA, 0 0 120px 25px #D9D9D9;
+  }
+}
+

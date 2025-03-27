@@ -15,9 +15,10 @@
 <?php wp_body_open(); ?>
 <header>
 	<h1 class="hidden"><?php bloginfo('name'); ?></h1>
+
 	<nav>
-		<h2>Main navigation</h2>
-		<ul>
+		<h2 class="hidden">Main navigation</h2>
+		<ul class="">
             <?php foreach (portfolio_get_navigation_links('main') as $link): ?>
 				<li>
 					<a href="<?= $link->url ?>" data-page="<?= $link->label ?>"><?= $link->label ?></a>

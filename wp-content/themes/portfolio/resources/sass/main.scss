@@ -1,6 +1,8 @@
-@import "reset";
-@import "display";
-@import "grid-flex";
-@import "font";
-@import "colors";
-@import "general";
+@import "settings/reset";
+@import "utils/display";
+@import "utils/grid-flex";
+@import "utils/font";
+@import "utils/colors";
+@import "general/aurora";
+@import "general/footer";
+@import "general/general";

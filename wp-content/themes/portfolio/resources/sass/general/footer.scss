@@ -1,18 +1,21 @@
 .footer {
-  position: relative;
-  background: transparent;
-  border-radius: 20px 20px 0px 0px;
-  margin: 0 10% 0 5%;
+  background: linear-gradient(180deg, #FFF 10%, #F1662A 100%);
+  width: 100vw;
 
   &-content {
-    padding: 24px 20px;
+    padding: 12% 0 2% 0;
+    position: relative;
+    border-radius: 20px 0px;
+    margin: 0 10% 0 10%;
   }
 
   &-section {
     gap: 1em;
+    color: #FFFFFF;
 
     &-title {
       font-family: "League Spartan", sans-serif;
+      cursor: text;
     }
 
     &-list {
@@ -22,11 +25,19 @@
     &-content {
       gap: 1em;
       font-family: "Titillium Web Regular", sans-serif;
+
+      &-link {
+        color: #FFFFFF;
+        transition: all ease-in-out 0.5s;
+        &:hover{
+          color: #000;
+        }
+      }
     }
   }
 
   &-social {
-    gap: 1em;
+    gap: 0.5em;
 
     &-link {
     }
@@ -51,6 +62,7 @@
   height: 100%;
   transition: opacity 0.3s ease;
 }
+
 .footer-social-link:hover .github path {
   fill: #8C31AB;
   transition: opacity 0.3s ease;

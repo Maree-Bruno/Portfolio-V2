@@ -12,8 +12,7 @@
 				<img src="<?= esc_url($image_url) ?>"
 				     alt="<?= esc_attr($image['alt']) ?>" itemprop="image"/>
             <?php endif; ?>
-			<p itemprop="description"><?= get_field('project_presentation1') ?></p>
-
+            <?= get_field('project_presentation1') ?>
 			<figure>
                 <?php
                 $image = get_field('image2');
@@ -23,7 +22,7 @@
 					<img src="<?= esc_url($image_url); ?>"
 					     alt="<?= esc_attr($image['alt']); ?>" itemprop="image"/>
                 <?php endif; ?>
-			<p itemprop="description"><?= get_field('project_presentation2') ?></p>
+                <?= get_field('project_presentation2') ?>
 			</figure>
 		</div>
 

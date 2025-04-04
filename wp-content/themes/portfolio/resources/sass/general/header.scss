@@ -1,0 +1,50 @@
+.aside {
+
+}
+
+.nav {
+  border-radius: 0 40px 40px 0;
+  background: #FFF;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.30);
+
+  &-list {
+    padding: 20px 10px;
+    min-height: 495px;
+    list-style: none;
+    width: 100%;
+
+    &-item {
+      &:hover {
+        svg path {
+          stroke: #F2733C;
+          transition: stroke 0.3s ease-in-out;
+        }
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      font-family: "Titillium Web Bold", sans-serif;
+      color: #000;
+      align-items: center;
+      @extend .flex;
+      gap: .5em;
+
+      &:hover {
+        transition: color 0.3s ease-in-out;
+        color: #F2733C;
+
+      }
+
+      &-text {
+
+      }
+    }
+  }
+}
+
+

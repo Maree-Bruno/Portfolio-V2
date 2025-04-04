@@ -47,6 +47,7 @@ function portfolio_get_navigation_links(string $location): array
         $items[$key] = new stdClass();
         $items[$key]->url = $item->url;
         $items[$key]->label = $item->title;
+        $items[$key]->icon  = get_field( 'icon', $item );
     }
 
     // Retourner le tableau de liens formatés

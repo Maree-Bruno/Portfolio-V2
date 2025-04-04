@@ -1,4 +1,15 @@
 .link{
-  font-family: "Titillium Web Regular", sans-serif;
   text-decoration: none;
+  font-family: "Titillium Web Regular", sans-serif;
+}
+.header{
+  max-width: 200px;
+  position: fixed;
+  top: 25%;
+  left: 0;
+  z-index: 10;
+}
+.content{
+  margin-left: 10%;
+  min-height: 100vh;
 }

@@ -4,7 +4,6 @@
  */
 ?>
 <?php get_header(); ?>
-<main class="page margin-top">
 	<div class="page__form">
 		<div class="page__content">
 			<h2 aria-level="1" class="page__content__title cyberpunk"> Contact Me </h2>
@@ -67,8 +66,5 @@
 				</div>
 			</fieldset>
 		</form>
-
-        <?php get_template_part('includes/section', 'informations') ?>
-</main>
 <?php get_footer(); ?>
 

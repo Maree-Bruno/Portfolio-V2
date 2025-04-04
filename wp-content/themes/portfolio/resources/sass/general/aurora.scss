@@ -18,16 +18,28 @@
   margin: auto;
 }
 
-.one {
-  animation: one 5s ease-in-out infinite alternate;
+.blue {
+  animation: blue 5s ease-in-out infinite alternate;
 }
 
-@keyframes one {
+@keyframes blue {
   from {
     box-shadow: 0 0 500px 50px #087CFA, 0 0 450px 40px #D9D9D9;
   }
   to {
     box-shadow: 0 0 150px 30px #087CFA, 0 0 120px 25px #D9D9D9;
+  }
+}
+.orange {
+  animation: orange 5s ease-in-out infinite alternate;
+}
+
+@keyframes orange {
+  from {
+    box-shadow: 0 0 500px 50px #F1662A , 0 0 450px 40px #D9D9D9;
+  }
+  to {
+    box-shadow: 0 0 150px 30px #F1662A , 0 0 120px 25px #D9D9D9;
   }
 }
 

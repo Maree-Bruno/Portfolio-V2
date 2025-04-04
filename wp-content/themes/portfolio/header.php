@@ -11,21 +11,33 @@
     <?php wp_head(); ?>
 
 </head>
-<body <?php add_data_page_attribute(); ?> >
+<body <?php add_data_page_attribute(); ?> class="body">
 <?php wp_body_open(); ?>
-<header>
+<header class="header">
 	<h1 class="hidden"><?php bloginfo('name'); ?></h1>
-
-	<nav>
-		<h2 class="hidden">Main navigation</h2>
-		<ul class="">
-            <?php foreach (portfolio_get_navigation_links('main') as $link): ?>
-				<li>
-					<a href="<?= $link->url ?>" data-page="<?= $link->label ?>"><?= $link->label ?></a>
-				</li>
-            <?php endforeach; ?>
-		</ul>
-	</nav>
+	<aside class="aside">
+		<nav class="nav">
+			<h2 class="hidden">Main navigation</h2>
+			<ul class="nav-list flex flex-col justify-around">
+                <?php foreach (portfolio_get_navigation_links('main') as $link): ?>
+					<li class="nav-list-item">
+						<a href="<?= $link->url ?>" data-page="
+						<?= $link->label ?>" class="nav-list-link">
+							<div class="nav-list-item-<?= $link->icon ?>">
+                                <?php
+                                $svg_path = get_template_directory()."/resources/img/".$link->icon.".svg";
+                                if (file_exists($svg_path)) {
+                                    echo file_get_contents($svg_path);
+                                } ?>
+							</div>
+							<p class="nav-list-link-text  text-xl"><?= $link->label ?></p>
+						</a>
+					</li>
+                <?php endforeach; ?>
+			</ul>
+		</nav>
+	</aside>
 </header>
-<main>
+<main class="main">
+	<div class="content">
 

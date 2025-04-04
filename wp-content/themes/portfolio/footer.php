@@ -1,7 +1,7 @@
 </div>
 </main>
 <footer class="footer">
-	<div class="footer-content flex flex-column justify-between">
+	<div class="footer-content flex flex-col">
 		<div class="footer-section flex flex-col">
 			<h3 class="footer-section-title text-2xl">Informations</h3>
 			<div class="footer-section-content flex flex-col">
@@ -28,7 +28,7 @@
 				<p itemprop="name">Bruno Marée 2025 ©</p>
 			</div>
 		</div>
-		<div class="footer-social flex flex-col">
+		<div class="footer-social flex flex-row">
 			<a href="https://github.com/Maree-Bruno" class="footer-social-link footer-social-icon "><span
 						class="hidden">Github</span>
 				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"

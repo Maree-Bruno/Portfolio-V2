@@ -1,0 +1,55 @@
+@use '../settings/breakpoints.scss' as b;
+@use '../utils/font.scss' as font;
+.page-form {
+ &-title{
+   @extend .text-4xl;
+    text-align: center;
+ }
+}
+
+.success {
+
+}
+
+.error {
+
+}
+
+.contact {
+
+  &-info {
+
+  }
+
+  &-container {
+
+  }
+
+  &-footer {
+    &-submit {
+
+    }
+  }
+}
+
+.field {
+  &-label {
+
+  }
+
+  &-fname {
+
+  }
+
+  &-lname {
+
+  }
+
+  &-email {
+
+  }
+
+  &-txtarea {
+
+  }
+}

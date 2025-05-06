@@ -1,24 +1,27 @@
 @use '../settings/breakpoints.scss' as b;
 .footer {
-  background: rgb(241,102,42);
-  background: linear-gradient(0deg, rgba(241,102,42,1) 62%, rgba(255,255,255,1) 100%);
-  width: 100vw;
-
   &-content {
-    padding: 15% 0 5% 0;
-    position: relative;
-    border-radius: 20px 0;
-    margin: 0 10% 0 15%;
-    gap:1em;
+    padding: 24px 20px;
+    justify-content: space-between;
+    align-items: flex-start;
     @include b.tablet-up {
      flex-direction: row;
       justify-content: space-between;
+      margin-left: 10%;
+    }
+    @include b.mobile-up{
+      margin-left: 10%;
+      gap: 2em;
+    }
+    @include b.mobile{
+      margin-left: 10%;
+      gap: 2em;
     }
   }
 
   &-section {
     gap: 1em;
-    color: #FFFFFF;
+    color: #000000;
 
     &-title {
       font-family: "League Spartan", sans-serif;
@@ -34,7 +37,7 @@
       font-family: "Titillium Web Regular", sans-serif;
 
       &-link {
-        color: #FFFFFF;
+        color: #000;
         transition: all ease-in-out 0.5s;
         &:hover{
           color: #000;

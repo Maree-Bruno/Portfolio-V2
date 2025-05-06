@@ -1,26 +1,42 @@
-.aside {
+@use '../settings/breakpoints.scss' as b;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include b.desktop-up {
+    max-width: 200px;
+    position: fixed;
+    top: 25%;
+    left: 0;
+    z-index: 10;
+  }
 
 }
 
 .nav {
-  border-radius: 0 40px 40px 0;
-  background: #FFF;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.30);
+  display: inline;
 
   &-list {
-    padding: 20px 10px;
-    min-height: 495px;
-    list-style: none;
-    width: 100%;
+    transition: translate 200ms ease-in-out;
+    translate: -100%;
+    padding: 0 20px;
+    min-height: 300px;
+    @include b.desktop-up {
+      border-radius: 0 40px 40px 0;
+      background: #FFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.30);
+      max-height: 495px;
+      list-style: none;
+      width: 100%;
+      translate: 0;
+    }
+
 
     &-item {
       &:hover {
         svg path {
-          stroke: #F2733C;
+          stroke: #000;
           transition: stroke 0.3s ease-in-out;
         }
       }
@@ -36,7 +52,7 @@
 
       &:hover {
         transition: color 0.3s ease-in-out;
-        color: #F2733C;
+        color: #000;
 
       }
 
@@ -46,5 +62,18 @@
     }
   }
 }
+
+/*
+.nav {
+  &:hover {
+    .nav-list-link-text {
+      @extend .not-sr-only; // Montre le texte au hover
+    }
+  }
+
+  .nav-list-link-text {
+    @extend .sr-only; // Cache le texte par défaut
+  }
+}*/
 
 

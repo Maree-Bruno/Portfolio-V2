@@ -15,28 +15,36 @@
 <?php wp_body_open(); ?>
 <header class="header">
 	<h1 class="hidden"><?php bloginfo('name'); ?></h1>
-	<aside class="aside">
 		<nav class="nav">
 			<h2 class="hidden">Main navigation</h2>
-			<ul class="nav-list flex flex-col justify-around">
-                <?php foreach (portfolio_get_navigation_links('main') as $link): ?>
-					<li class="nav-list-item">
-						<a href="<?= $link->url ?>" data-page="
+			<div class="nav-container">
+			<label for="burger" class="sr-only">Burger menu</label>
+			<input type="checkbox" id="burger" name="burger">
+				<div class="burger-wrapper">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<ul class="nav-list flex flex-col justify-around">
+                    <?php foreach (portfolio_get_navigation_links('main') as $link): ?>
+						<li class="nav-list-item">
+							<a href="<?= $link->url ?>" data-page="
 						<?= $link->label ?>" class="nav-list-link">
-							<div class="nav-list-item-<?= $link->icon ?>">
-                                <?php
-                                $svg_path = get_template_directory()."/resources/img/".$link->icon.".svg";
-                                if (file_exists($svg_path)) {
-                                    echo file_get_contents($svg_path);
-                                } ?>
-							</div>
-							<p class="nav-list-link-text  text-xl"><?= $link->label ?></p>
-						</a>
-					</li>
-                <?php endforeach; ?>
-			</ul>
+								<div class="nav-list-item-<?= $link->icon ?>">
+                                    <?php
+                                    $svg_path = get_template_directory()."/resources/img/".$link->icon.".svg";
+                                    if (file_exists($svg_path)) {
+                                        echo file_get_contents($svg_path);
+                                    } ?>
+								</div>
+								<p class="nav-list-link-text text-xl"><?= $link->label ?></p>
+							</a>
+						</li>
+                    <?php endforeach; ?>
+				</ul>
+
+			</div>
 		</nav>
-	</aside>
 </header>
 <main class="main">
 	<div class="content">

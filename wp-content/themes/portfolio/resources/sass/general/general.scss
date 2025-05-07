@@ -1,11 +1,10 @@
 @use '../settings/breakpoints.scss' as b;
-.link{
-  text-decoration: none;
-  font-family: "Titillium Web Regular", sans-serif;
-}
-
 .content{
   margin-top: 5%;
+}
+.title {
+  @extend .text-4xl;
+  text-align: center;
 }
 body{
   background: var(--background-color);

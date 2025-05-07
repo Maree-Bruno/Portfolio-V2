@@ -1,5 +1,6 @@
 @use '../settings/breakpoints.scss' as b;
 .footer {
+  background: var(--background-color);
   &-content {
     padding: 24px 20px;
     justify-content: space-between;
@@ -7,14 +8,11 @@
     @include b.tablet-up {
      flex-direction: row;
       justify-content: space-between;
-      margin-left: 10%;
     }
     @include b.mobile-up{
-      margin-left: 10%;
       gap: 2em;
     }
     @include b.mobile{
-      margin-left: 10%;
       gap: 2em;
     }
   }
@@ -29,18 +27,20 @@
     }
 
     &-list {
-      gap: 0.4em;
+      gap: 1em;
     }
 
     &-content {
       gap: 1em;
-      font-family: "Titillium Web Regular", sans-serif;
+      font-family: "League Spartan", sans-serif;
 
       &-link {
         color: #000;
         transition: all ease-in-out 0.5s;
+        font-family: "League Spartan", sans-serif;
+        text-decoration: none;
         &:hover{
-          color: #000;
+          color: var(--success);
         }
       }
     }

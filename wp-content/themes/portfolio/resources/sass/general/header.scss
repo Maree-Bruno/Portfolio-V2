@@ -15,7 +15,9 @@
 
 .nav {
   display: inline;
-
+  &-container {
+    background: none;
+  }
   &-list {
     transition: translate 200ms ease-in-out;
     translate: -100%;
@@ -28,7 +30,6 @@
       box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.30);
       max-height: 495px;
       list-style: none;
-      width: 100%;
       translate: 0;
     }
 
@@ -36,7 +37,7 @@
     &-item {
       &:hover {
         svg path {
-          stroke: #000;
+          stroke: var(--success);
           transition: stroke 0.3s ease-in-out;
         }
       }
@@ -45,14 +46,14 @@
     &-link {
       text-decoration: none;
       font-family: "Titillium Web Bold", sans-serif;
-      color: #000;
+      color: var(--text-color);
       align-items: center;
       @extend .flex;
       gap: .5em;
 
       &:hover {
         transition: color 0.3s ease-in-out;
-        color: #000;
+        color: var(--success);
 
       }
 

@@ -1,55 +1,99 @@
 @use '../settings/breakpoints.scss' as b;
 @use '../utils/font.scss' as font;
+
 .page-form {
- &-title{
-   @extend .text-4xl;
+  @include b.desktop-up {
+    max-width: 800px;
+    margin: 5% auto; // centre horizontalement
+  }
+  margin: 10% 5% 5%;
+  gap: 2rem;
+
+  &-title {
+    @extend .text-4xl;
     text-align: center;
- }
+  }
 }
 
 .success {
-
+  color: var(--success);
+  @extend .text-2xl;
+  text-align: center;
 }
 
 .error {
-
+  color: var(--error);
+  @extend .text-sm
 }
 
 .contact {
 
   &-info {
-
+    gap: 2rem;
   }
 
   &-container {
-
+    gap: 2rem;
+    &-input {
+      gap: 2rem;
+    }
   }
 
   &-footer {
     &-submit {
+      padding: 18px 24px;
+      border-radius: 14px;
+      border: 3px solid var(--success);
+      background: var(--foreground-color);
+      font-family: "League Spartan", sans-serif;
+      @extend .text-2xl;
+      color: var(--text-color);
+      transition: all .2s ease-in-out;
 
+      &:hover {
+        border: 3px solid var(--success);
+        background: var(--success);
+        color: var(--foreground-color);
+      }
     }
   }
 }
 
 .field {
-  &-label {
 
+  &-input {
+    padding: 15px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--success);
+    font-family: "Titillium Web Regular", sans-serif;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--success);
+    }
+  }
+
+  &-label {
+    font-family: "League Spartan", sans-serif;
+    @extend .text-lg;
   }
 
   &-fname {
+    max-width: 800px;
 
   }
 
   &-lname {
+    max-width: 800px;
 
   }
 
   &-email {
+    max-width: 800px;
 
   }
 
   &-txtarea {
-
+    max-width: 800px;
   }
 }

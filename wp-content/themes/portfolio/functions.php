@@ -81,6 +81,7 @@ function portfolio_asset(string $file): string
 add_image_size('blog-large', 800, 600);
 add_image_size('blog-medium', 640, 480);
 add_image_size('blog-small', 320, 240, true);
+add_image_size('blog-xsmall', 240, 200);
 
 //register side bars
 function my_sidebars(): void

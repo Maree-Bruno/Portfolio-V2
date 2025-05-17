@@ -5,15 +5,16 @@
 ?>
 
 <?php get_header(); ?>
-	<h2 aria-level="1">Projects</h2>
-	<div>
+	<h2 class="title font-title">Projects</h2>
+	<div class="archive-container">
         <?php get_template_part('includes/section', 'archive') ?>
 	</div>
 	<div>
-		<div>
+		<div class="previous font-title">
             <?php previous_posts_link() ?>
 		</div>
-		<div>
+		<?= paginate_links() ?>
+		<div class="next font-title">
             <?php next_posts_link() ?>
 		</div>
 	</div>

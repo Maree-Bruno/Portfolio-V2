@@ -1,6 +1,12 @@
 @use '../settings/breakpoints.scss' as b;
 .content{
-  margin-top: 5%;
+  margin-top: 15%;
+  @include b.tablet-up{
+    margin-top: 10%;
+  }
+  @include b.desktop-up{
+    margin-top: 5%;
+  }
 }
 .title {
   @extend .text-4xl;

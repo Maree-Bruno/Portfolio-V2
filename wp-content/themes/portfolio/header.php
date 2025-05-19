@@ -8,6 +8,7 @@
 	<title><?php bloginfo('name');
         wp_title($sep = '·') ?></title>
 	<link rel="stylesheet" href="<?= portfolio_asset('css/main.css'); ?>">
+	<script src="<?= portfolio_asset('js/main.js') ?>"></script>
     <?php wp_head(); ?>
 
 </head>

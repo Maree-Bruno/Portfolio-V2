@@ -1,0 +1,260 @@
+@use '../settings/breakpoints.scss' as b;
+
+.tag {
+  &-list {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    flex: 1 0 0;
+  }
+
+  &-item {
+    background: var(--success);
+    padding: 10px;
+    border-radius: 15px;
+    color: var(--foreground-color);
+    align-self: center;
+    font-weight: Bold;
+    cursor: pointer;
+    @include b.mobile {
+      font-size: 0.5em;
+      border-radius: 10px;
+    }
+    @include b.tablet-up {
+      font-size: 0.7em;
+    }
+  }
+}
+
+.single-project {
+  margin: 15% 10% 10% 10%;
+  @include b.tablet-up {
+    margin: 10% 5%;
+  }
+  @include b.desktop-up {
+    margin: 5% 7%;
+  }
+
+  &-title {
+    text-align: center;
+    margin-bottom: 10%;
+    @include b.desktop-up {
+      margin-bottom: 5%;
+    }
+  }
+
+  &-content {
+    @include b.mobile {
+      gap: 4em;
+    }
+    @include b.tablet-up {
+      gap: 6em;
+    }
+    @include b.desktop-up {
+      gap: 9em;
+    }
+
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6em;
+
+      & > p {
+        font-family: "League Spartan", serif;
+        font-size: 0.9rem;
+        @include b.desktop-up {
+          font-size: 1.1em;
+        }
+      }
+    }
+
+    &-fig {
+      max-width: 300px;
+      max-height: 225px;
+      background: var(--foreground-color);
+      padding: 10px 10px 60px 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      min-width: 300px;
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background-color: whitesmoke;
+    }
+  }
+
+  &-presentation {
+    gap: 2em;
+    max-height: fit-content;
+    @include b.tablet-up {
+      flex-direction: row;
+    }
+
+    &-content {
+      gap: 1em;
+      @include b.tablet-up {
+        max-width: 500px;
+      }
+      @include b.desktop-up {
+        max-width: 600px;
+      }
+    }
+  }
+
+  &-colors {
+    &-list {
+      gap: 1em;
+    }
+
+    &-item {
+      padding: 20px;
+      border-radius: 40px;
+      color: var(--foreground-color);
+      align-self: center;
+      font-weight: Bold;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+
+      :hover {
+        scale: 1.2;
+      }
+
+      @include b.mobile {
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  &-gallery {
+    gap: 2em;
+
+    @include b.tablet-up {
+      flex-direction: row;
+    }
+    @include b.desktop-up {
+      flex-direction: row;
+      gap: 5em;
+    }
+
+    &-sticky {
+      @include b.tablet-up {
+        position: sticky;
+        top: 10%;
+        max-height: fit-content;
+        height: fit-content;
+      }
+      @include b.desktop-up {
+        position: sticky;
+        top: 10%;
+        max-height: fit-content;
+        height: fit-content;
+      }
+    }
+
+    &-display {
+      gap: 2em;
+    }
+
+    &-frame {
+      background: var(--foreground-color);
+      padding: 10px 10px 60px 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      @include b.desktop-up {
+        max-width: 400px;
+        max-height: 300px;
+        min-height: 300px;
+      }
+    }
+
+    &-layout {
+      max-width: 300px;
+      max-height: 225px;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      @include b.desktop-up {
+        max-width: 400px;
+        width: 100%;
+        max-height: 300px;
+        min-height: 300px;
+      }
+    }
+
+    &-scroll {
+      text-align: center;
+      margin-top: 5%;
+    }
+
+    &-list {
+
+    }
+
+    &-fig {
+
+    }
+
+    &-img {
+      width: 100%;
+      max-height: 300px;
+      min-height: 300px;
+      height: auto;
+      object-fit: contain;
+      background-color: whitesmoke;
+    }
+  }
+
+  &-links {
+    margin: 0 5%;
+    width: 100%;
+  }
+
+  &-link {
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: var(--foreground-color);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color var(--animation-timing), background var(--animation-timing), scale var(--animation-timing);
+
+    &:hover {
+      scale: 1.2;
+      text-align: center;
+      background: var(--success);
+      color: var(--foreground-color);
+    }
+  }
+
+  &-features {
+    position: relative;
+    margin-top: 5%;
+    gap: 2em;
+    max-width: 300px;
+    @include b.tablet-up {
+      margin-top: 0;
+      justify-content: flex-start;
+    }
+    @include b.desktop-up {
+      max-width: 600px;
+      justify-content: flex-start;
+
+    }
+
+    &-title {
+    }
+
+    &-list {
+      gap: 0.6em;
+    }
+
+    &-item {
+      font-weight: bold;
+    }
+  }
+}

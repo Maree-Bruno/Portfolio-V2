@@ -64,6 +64,5 @@
 			</div>
 		</fieldset>
 	</form>
-
     <?php get_footer(); ?>
 

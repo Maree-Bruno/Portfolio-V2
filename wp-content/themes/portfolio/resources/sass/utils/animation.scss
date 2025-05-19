@@ -1,3 +1,17 @@
 :root{
   --animation-timing: 0.3s ease-in-out;
+  --bouncing-timing: 5s ease-in-out;
+  --slide-timing: 20s linear infinite;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% {
+    transform: translateX(-50%)
+  }
 }

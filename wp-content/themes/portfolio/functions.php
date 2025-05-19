@@ -125,8 +125,8 @@ function project_taxonomy(): void
 {
     $args = [
         'labels' => [
-            'name' => 'Types',
-            'singular_name' => 'Type',
+            'name' => 'brands',
+            'singular_name' => 'brand',
         ],
         'public' => true,
         'hierarchical' => true,

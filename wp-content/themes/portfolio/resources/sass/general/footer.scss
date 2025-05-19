@@ -2,8 +2,11 @@
 .footer {
   background: var(--background-color);
   margin: 0 10%;
+  @include b.tablet-up{
+    margin: 2% 3%;
+  }
   &-content {
-    padding: 24px 20px;
+
     justify-content: space-between;
     align-items: flex-start;
     @include b.tablet-up {

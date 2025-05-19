@@ -1,22 +1,25 @@
 @use '../settings/breakpoints.scss' as b;
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   @include b.desktop-up {
     max-width: 200px;
     position: fixed;
     top: 25%;
     left: 0;
-    z-index: 10;
   }
 
 }
 
 .nav {
   display: inline;
+
   &-container {
   }
+
   &-list {
     transition: translate 200ms ease-in-out;
     translate: -100%;

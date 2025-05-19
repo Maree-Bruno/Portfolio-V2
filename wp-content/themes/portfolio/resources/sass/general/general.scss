@@ -1,5 +1,5 @@
 @use '../settings/breakpoints.scss' as b;
-.content{
+/*.content{
   margin-top: 15%;
   @include b.tablet-up{
     margin-top: 10%;
@@ -7,11 +7,12 @@
   @include b.desktop-up{
     margin-top: 5%;
   }
-}
+}*/
 .title {
   @extend .text-4xl;
   text-align: center;
 }
 body{
   background: var(--background-color);
+  scroll-behavior: smooth;
 }

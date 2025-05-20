@@ -8,7 +8,7 @@
   background-size: cover;
   background-position: center;
   @include b.mobile {
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   &-container {
@@ -26,6 +26,7 @@
       font-size: 9rem;
     }
     @include b.mobile {
+
     }
 
     &-fn {
@@ -37,6 +38,9 @@
 
     &-ln {
       margin-right: 2%;
+      @include b.widescreen {
+        margin-right: 10%;
+      }
     }
 
     &-title {
@@ -50,17 +54,21 @@
 }
 
 .anchor {
+  position: relative;
+  z-index: 1;
   color: var(--foreground-color);
   text-decoration: none;
   gap: 0.2em;
   scroll-behavior: smooth;
   margin-bottom: 2%;
+  cursor: pointer;
   transition: scroll-behavior var(--animation-timing), scale var(--animation-timing);
   @include b.desktop-up {
     font-size: 2em;
   }
 
   &:after {
+    cursor: pointer;
     content: '';
     display: block;
     background-image: url("/wp-content/themes/portfolio/resources/img/arrow-down-circle.svg");
@@ -107,19 +115,47 @@
   }
 
   &-container {
-    @include b.mobile {
-      flex-direction: column;
-      gap: 1em;
+    gap: 3em;
+    @include b.desktop-up {
+      flex-direction: row;
     }
   }
 }
 
 .about {
-  margin-top: 5%;
+  margin: 5% 7%;
   gap: 3em;
 
   &-main {
-    margin-left: 7%;
+    gap: 3em;
+    @include b.tablet-up {
+    }
+    @include b.desktop-up {
+      gap: 3em;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    &-content {
+      gap: 3em;
+      @include b.tablet {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      @include b.tablet-desktop {
+        flex-direction: row;
+      }
+      @include b.desktop {
+        margin-left: 3%;
+        flex-direction: row;
+      }
+      @include b.widescreen {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+      }
+    }
+
   }
 
   &-fig {
@@ -153,27 +189,68 @@
   &-content {
     max-width: 500px;
     gap: 2em;
+    @include b.mobile {
+      gap: 1em;
+      max-width: 300px;
+    }
+    @include b.tablet-up {
+      gap: 1em;
+      max-width: 400px;
+    }
+    @include b.desktop-up {
+      gap: 1em;
+      max-width: 600px;
+    }
+    @include b.widescreen {
+      gap: 1em;
+      max-width: 600px;
+      justify-content: space-between;
+    }
 
     &-detail {
       @extend .text-2xl;
+      @include b.tablet-up {
+
+      }
     }
 
     &-description {
+      gap: 1em;
+
       & > p {
         @extend .text-lg;
+        @include b.mobile-up {
+          font-size: 1em;
+        }
+        @include b.widescreen {
+          font-size: 1.5em;
+          max-width: 600px;
+        }
       }
     }
   }
 
   &-career {
-    margin-right: 5%;
-    gap:2em;
+    margin: 0 3%;
+    gap: 2em;
+    @include b.mobile {
+      gap: 1em;
+      max-width: 300px;
+    }
+
     &-title {
 
     }
 
     &-list {
       gap: 1.5em;
+      @include b.mobile {
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      @include b.widescreen {
+        flex-direction: column;
+      }
 
     }
 
@@ -195,14 +272,22 @@
   }
 
   &-knowledge {
-    margin: auto;
     padding: 1em 2em;
     overflow: hidden;
+    max-width: 300px;
+    @include b.mobile {
+      margin: 0;
+    }
+
 
     &-list {
       gap: 2em;
       animation: slide var(--slide-timing);
-      width: calc(198px * 14);
+      overflow: hidden;
+      min-width: fit-content;
+      @include b.mobile {
+        overflow: hidden;
+      }
 
       &-item {
         &-fig {
@@ -210,7 +295,7 @@
         }
 
         &-img {
-          width: 50px;
+          width: 30px;
           height: auto;
         }
       }

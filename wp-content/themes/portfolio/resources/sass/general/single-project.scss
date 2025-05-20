@@ -5,7 +5,7 @@
     display: flex;
     gap: 1em;
     align-items: center;
-    flex: 1 0 auto;
+    flex-wrap: wrap;
   }
 
   &-item {
@@ -46,9 +46,11 @@
   &-content {
     @include b.mobile {
       gap: 4em;
+      max-width: 300px;
     }
     @include b.tablet-up {
       gap: 6em;
+      max-width: none;
     }
     @include b.desktop-up {
       gap: 9em;
@@ -61,10 +63,14 @@
       gap: 0.6em;
 
       & > p {
-        font-family: "League Spartan", serif;
+        @extend .font-text;
         font-size: 0.9rem;
         @include b.desktop-up {
           font-size: 1.1em;
+        }
+
+        & > strong {
+          @extend .font-title;
         }
       }
     }
@@ -76,6 +82,12 @@
       padding: 10px 10px 60px 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       min-width: 300px;
+      @include b.widescreen {
+        max-width: 600px;
+        min-width: 600px;
+        max-height: 550px;
+
+      }
     }
 
     &-img {
@@ -106,6 +118,7 @@
 
   &-colors {
     overflow-x: scroll;
+
     &-list {
       gap: 1em;
     }
@@ -172,6 +185,12 @@
         max-height: 300px;
         min-height: 300px;
       }
+      @include b.widescreen {
+        max-width: 600px;
+        min-width: 600px;
+        max-height: 480px;
+
+      }
     }
 
     &-layout {
@@ -185,6 +204,13 @@
         max-height: 300px;
         min-height: 300px;
       }
+      @include b.widescreen {
+        width: 100%;
+        max-width: 600px;
+        min-width: 600px;
+        max-height: 480px;
+
+      }
     }
 
     &-scroll {
@@ -193,11 +219,22 @@
     }
 
     &-list {
+      @include b.widescreen {
+        max-width: 600px;
+        min-width: 600px;
+        max-height: 480px;
 
+      }
     }
 
     &-fig {
+      margin-bottom: 1%;
+      @include b.widescreen {
+        max-width: 600px;
+        min-width: 600px;
+        max-height: 480px;
 
+      }
     }
 
     &-img {
@@ -207,6 +244,12 @@
       height: auto;
       object-fit: contain;
       background-color: whitesmoke;
+      @include b.widescreen {
+        max-width: 600px;
+        min-width: 600px;
+        max-height: 480px;
+
+      }
     }
   }
 
@@ -255,7 +298,7 @@
     }
 
     &-item {
-      font-weight: bold;
+
     }
   }
 }

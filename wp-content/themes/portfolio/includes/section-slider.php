@@ -1,5 +1,4 @@
 <div class="about-knowledge">
-    <div class="about-knowledge-track">
         <ul class="about-knowledge-list flex flex-row">
             <?php if (have_rows('slider')): while (have_rows('slider')): the_row(); ?>
                 <?php $img = get_sub_field('logo'); if ($img): ?>
@@ -26,5 +25,4 @@
                     </li>
                 <?php endif; endwhile; endif; ?>
         </ul>
-    </div>
 </div>

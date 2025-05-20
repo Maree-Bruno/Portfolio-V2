@@ -84,8 +84,7 @@
     padding: 0 1em;
 
     & > p {
-      @extend .font-text;
-      @extend .text-sm
+      @extend .text-sm;
     }
   }
 
@@ -124,7 +123,7 @@
 .flip-card {
   background-color: transparent;
   width: 300px;
-  height: 300px;
+  height: 320px;
   perspective: 1000px;
 
   &-inner {
@@ -155,7 +154,6 @@
   &-back {
     gap: 5px;
     transform: rotateY(180deg);
-    padding: 20px 10px 0 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
     &-background {
@@ -168,6 +166,7 @@
       color: var(--foreground-color);
       min-height: 240px;
       max-height: 240px;
+      margin: 20px 10px 0 10px;
     }
   }
 }

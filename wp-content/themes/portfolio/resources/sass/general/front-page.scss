@@ -1,3 +1,304 @@
-.project-section{
-  gap:3em;
+@use '../settings/breakpoints.scss' as b;
+
+.hero {
+  width: 100dvw;
+  height: 100dvh;
+  background-image: url('/wp-content/themes/portfolio/resources/img/background_capybara.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include b.mobile {
+    justify-content: space-between;
+  }
+
+  &-container {
+    width: 100%;
+  }
+
+  &-title {
+    color: var(--foreground-color);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    gap: 0.5em;
+    position: relative;
+    z-index: 1;
+    @include b.tablet-up {
+      font-size: 9rem;
+    }
+    @include b.mobile {
+
+    }
+
+    &-fn {
+
+      @include b.mobile-up {
+
+      }
+    }
+
+    &-ln {
+      margin-right: 2%;
+      @include b.widescreen {
+        margin-right: 10%;
+      }
+    }
+
+    &-title {
+
+      @include b.tablet-up {
+        font-size: 5rem;
+      }
+
+    }
+  }
+}
+
+.anchor {
+  position: relative;
+  z-index: 1;
+  color: var(--foreground-color);
+  text-decoration: none;
+  gap: 0.2em;
+  scroll-behavior: smooth;
+  margin-bottom: 2%;
+  cursor: pointer;
+  transition: scroll-behavior var(--animation-timing), scale var(--animation-timing);
+  @include b.desktop-up {
+    font-size: 2em;
+  }
+
+  &:after {
+    cursor: pointer;
+    content: '';
+    display: block;
+    background-image: url("/wp-content/themes/portfolio/resources/img/arrow-down-circle.svg");
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: bounce var(--bouncing-timing) infinite;
+    @include b.desktop-up {
+      width: 49px;
+      height: 49px;
+    }
+  }
+
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+.capybara {
+  position: absolute;
+  bottom: 2%;
+  left: 10%;
+  z-index: 0;
+  @include b.mobile {
+    bottom: 10%;
+  }
+
+  &-fig {
+  }
+
+  &-img {
+    transform: scaleX(-1);
+    @include b.mobile {
+      width: 60%;
+      height: auto;
+    }
+  }
+}
+
+.project {
+  &-section {
+    gap: 3em;
+  }
+
+  &-container {
+    gap: 3em;
+    @include b.desktop-up {
+      flex-direction: row;
+    }
+  }
+}
+
+.about {
+  margin: 5% 7%;
+  gap: 3em;
+
+  &-main {
+    gap: 3em;
+    @include b.tablet-up {
+    }
+    @include b.desktop-up {
+      gap: 3em;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    &-content {
+      gap: 3em;
+      @include b.tablet {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      @include b.tablet-desktop {
+        flex-direction: row;
+      }
+      @include b.desktop {
+        margin-left: 3%;
+        flex-direction: row;
+      }
+      @include b.widescreen {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+      }
+    }
+
+  }
+
+  &-fig {
+    max-width: 300px;
+    max-height: 300px;
+    background: var(--foreground-color);
+    padding: 10px 10px 60px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+    position: relative;
+
+    &:after {
+      content: 'XOXO';
+      @extend .font-sm;
+      position: absolute;
+      bottom: 20%;
+      right: 5%;
+      rotate: -30deg;
+      color: var(--foreground-color);
+    }
+  }
+
+  &-img {
+    width: 100%;
+    max-height: 300px;
+    height: auto;
+    object-fit: cover;
+    background-color: whitesmoke;
+  }
+
+  &-content {
+    max-width: 500px;
+    gap: 2em;
+    @include b.mobile {
+      gap: 1em;
+      max-width: 300px;
+    }
+    @include b.tablet-up {
+      gap: 1em;
+      max-width: 400px;
+    }
+    @include b.desktop-up {
+      gap: 1em;
+      max-width: 600px;
+    }
+    @include b.widescreen {
+      gap: 1em;
+      max-width: 600px;
+      justify-content: space-between;
+    }
+
+    &-detail {
+      @extend .text-2xl;
+      @include b.tablet-up {
+
+      }
+    }
+
+    &-description {
+      gap: 1em;
+
+      & > p {
+        @extend .text-lg;
+        @include b.mobile-up {
+          font-size: 1em;
+        }
+        @include b.widescreen {
+          font-size: 1.5em;
+          max-width: 600px;
+        }
+      }
+    }
+  }
+
+  &-career {
+    margin: 0 3%;
+    gap: 2em;
+    @include b.mobile {
+      gap: 1em;
+      max-width: 300px;
+    }
+
+    &-title {
+
+    }
+
+    &-list {
+      gap: 1.5em;
+      @include b.mobile {
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      @include b.widescreen {
+        flex-direction: column;
+      }
+
+    }
+
+    &-item {
+      gap: 0.2em;
+    }
+
+    &-time {
+
+    }
+
+    &-qualification {
+
+    }
+
+    &-place {
+
+    }
+  }
+
+  &-knowledge {
+    padding: 1em 2em;
+    overflow: hidden;
+    max-width: 300px;
+    @include b.mobile {
+      margin: 0;
+    }
+
+
+    &-list {
+      gap: 2em;
+      animation: slide var(--slide-timing);
+      overflow: hidden;
+      min-width: fit-content;
+      @include b.mobile {
+        overflow: hidden;
+      }
+
+      &-item {
+        &-fig {
+
+        }
+
+        &-img {
+          width: 30px;
+          height: auto;
+        }
+      }
+    }
+  }
 }

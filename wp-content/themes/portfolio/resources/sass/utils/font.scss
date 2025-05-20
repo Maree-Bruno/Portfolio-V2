@@ -11,6 +11,10 @@
   font-family: 'Titillium Web Regular';
   src: url('/wp-content/themes/portfolio/resources/fonts/TitilliumWeb-Regular.ttf');
 }
+@font-face {
+  font-family: 'Beth Ellen Regular';
+  src: url('/wp-content/themes/portfolio/resources/fonts/BethEllen-Regular.ttf');
+}
 .font-title{
   font-family: "League Spartan", sans-serif;
 }
@@ -19,6 +23,9 @@
 }
 .font-text{
   font-family: "Titillium Web Regular", sans-serif;
+}
+.font-sm{
+  font-family: "Beth Ellen Regular", sans-serif;
 }
 //sizing
 //12px

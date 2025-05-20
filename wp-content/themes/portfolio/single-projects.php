@@ -20,6 +20,7 @@
                             <?php endif; ?>
 						</div>
 						<div class="single-project-content-text">
+							<h3 class="single-project-content-title font-title text-lg">Summary</h3>
                             <?php the_sub_field('project_presentation1') ?>
 						</div>
 					</div>

@@ -52,3 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.color = setOptimalTextColor(hex);
     });
 });
+
+

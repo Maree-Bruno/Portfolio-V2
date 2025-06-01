@@ -11,7 +11,7 @@
     align-items: flex-start;
     @include b.tablet-up {
      flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
     }
     @include b.mobile-up{
       gap: 2em;

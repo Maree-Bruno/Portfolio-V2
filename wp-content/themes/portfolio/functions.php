@@ -3,9 +3,11 @@
 use Src\ContactForm;
 
 // Démarrer le système de sessions pour pouvoir afficher des messages de feedback venant des formulaires.
-if (session_status() === PHP_SESSION_NONE) session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-require_once(__DIR__ . '/src/ContactForm.php');
+require_once(__DIR__.'/src/ContactForm.php');
 
 //theme options
 add_theme_support('menus');
@@ -16,18 +18,25 @@ add_theme_support('widgets');
 //Menus
 register_nav_menu('main', 'Navigation principale, en-tête du site');
 register_nav_menu('footer', 'Navigation secondaire, navigation du pied-de-page');
+function init_remove_support(): void
+{
+    remove_post_type_support('post', 'editor');
+    remove_post_type_support('page', 'editor');
+    remove_post_type_support('product', 'editor');
+}
 
+add_action('init', 'init_remove_support', 100);
 /*
  * Disable guttenberg bc it's shitty
  */
-add_filter( 'use_block_editor_for_post', '__return_false' );
-add_filter( 'use_widgets_block_editor', '__return_false' );
-add_action( 'wp_enqueue_scripts', static function () {
-    wp_dequeue_style( 'wp-block-library' );
-    wp_dequeue_style( 'wp-block-library-theme' );
-    wp_dequeue_style( 'global-styles' );
+add_filter('use_block_editor_for_post', '__return_false');
+add_filter('use_widgets_block_editor', '__return_false');
+add_action('wp_enqueue_scripts', static function () {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('global-styles');
 },
-    20 );
+    20);
 function portfolio_get_navigation_links(string $location): array
 {
     // Pour $location, retrouver le menu.
@@ -47,7 +56,7 @@ function portfolio_get_navigation_links(string $location): array
         $items[$key] = new stdClass();
         $items[$key]->url = $item->url;
         $items[$key]->label = $item->title;
-        $items[$key]->icon  = get_field( 'icon', $item );
+        $items[$key]->icon = get_field('icon', $item);
     }
 
     // Retourner le tableau de liens formatés
@@ -62,7 +71,7 @@ function portfolio_get_template_page(string $template): int|WP_Post|null
         'meta_query' => [
             [
                 'key' => '_wp_page_template',
-                'value' => $template . '.php',
+                'value' => $template.'.php',
             ],
         ]
     ]);
@@ -74,7 +83,7 @@ function portfolio_get_template_page(string $template): int|WP_Post|null
 // 1. Charger un fichier "public" (asset/image/css/script/...) pour le front-end.
 function portfolio_asset(string $file): string
 {
-    return get_template_directory_uri() . '/public/' . $file;
+    return get_template_directory_uri().'/public/'.$file;
 }
 
 //custom images sizes
@@ -158,12 +167,13 @@ function portfolio_execute_contact_form(): void
             'message' => ['required'],
         ])
         ->save(
-            title: fn($data) => $data['firstname'] . ' ' . $data['lastname'] . ' <' . $data['email'] . '>',
+            title: fn($data) => $data['firstname'].' '.$data['lastname'].' <'.$data['email'].'>',
             content: fn($data) => $data['message'],
         )
         ->send(
-            title: fn($data) => 'Nouveau message de ' . $data['firstname'] . ' ' . $data['lastname'],
-            content: fn($data) => 'Prénom: ' . $data['firstname'] . PHP_EOL . 'Nom: ' . $data['lastname'] . PHP_EOL . 'Email: ' . $data['email'] . PHP_EOL . 'Message:' . PHP_EOL . $data['message'],
+            title: fn($data) => 'Nouveau message de '.$data['firstname'].' '.$data['lastname'],
+            content: fn($data
+            ) => 'Prénom: '.$data['firstname'].PHP_EOL.'Nom: '.$data['lastname'].PHP_EOL.'Email: '.$data['email'].PHP_EOL.'Message:'.PHP_EOL.$data['message'],
         )
         ->feedback();
 }
@@ -196,23 +206,58 @@ function portfolio_session_get(string $key)
     return null;
 }
 
-function add_data_page_attribute(): void
-{
-    if (is_page('projects')) {
-        echo 'data-page="Projects"';
-    } elseif (is_page('home')) {
-        echo 'data-page="Home"';
-    } elseif (is_page('me')) {
-        echo 'data-page="Me"';
-    } elseif (is_page('contact')) {
-        echo 'data-page="Contact"';
-    } elseif (is_page('legal-informations')) {
-        echo 'data-page="Legal Informations"';
-    } elseif (is_singular('project')) {
-        echo 'data-page="Projects"';
-    } elseif (is_tax('project')) {
-        echo 'data-page="Projects"';
-    } else {
-        echo 'data-page="Projects"';
+function responsive_image( $image, $settings ): bool|string {
+    if ( empty( $image ) ) {
+        return '';
     }
+
+    $image_id = '';
+
+    if ( is_numeric( $image ) ) {
+        // si c'est un nombre, on considère que cela s'agit d'un ID
+        $image_id = $image;
+    } elseif ( is_array( $image ) && isset( $image['ID'] ) ) {
+        // Si c'est un tableau associatif contenant la clé ID, on récupère cet ID
+        $image_id = $image['ID'];
+    } else {
+        return '';
+    }
+
+// Récupération des informations de l'image depuis la base de données.
+    $alt        = get_post_meta( $image_id, '_wp_attachment_image_alt', true ); // Attribut alt
+    $image_post = get_post( $image_id ); // Object WP_Post de l'image
+    $title      = $image_post->post_title ?? '';
+    $name       = $image_post->post_name ?? '';
+
+// Récupération des URLS et attributs pour l'image en taille "full"
+// Wordpress génère automatiquement un srcset basé sur les tailles existantes
+    $src    = wp_get_attachment_image_url( $image_id, 'full' );
+    $srcset = wp_get_attachment_image_srcset( $image_id, 'full' );
+    $sizes  = $settings['custom_sizes'] ?? wp_get_attachment_image_sizes( $image_id, 'full' );
+
+    if ( empty( $settings['custom_sizes'] ) ) {
+        $sizes = '{min-width: 800px} 640px, 100dvw';
+    }
+// Gestion de l'attribut de chargement "lazy" ou "eager" selon les paramètres.
+    $lazy = $settings['lazy'] ?? 'eager';
+
+// Gestion des class (si des class sont fournies dans $settings).
+    $class = '';
+    if ( ! empty( $settings['class'] ) ) {
+        $class = is_array( $settings['class'] ) ? implode( ' ', $settings['class'] ) : $settings['class'];
+    }
+
+    ob_start();
+    ?>
+    <picture>
+        <img
+            src="<?= esc_url( $src ) ?>"
+            alt="<?= esc_attr( $alt ) ?>"
+            loading="<?= esc_attr( $lazy ) ?>"
+            srcset="<?= esc_attr( $srcset ) ?>"
+            sizes="<?= esc_attr( $sizes ) ?>"
+            class="<?= esc_attr( $class ) ?>">
+    </picture>
+    <?php
+    return ob_get_clean();
 }

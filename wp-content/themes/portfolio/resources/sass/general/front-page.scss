@@ -1,12 +1,6 @@
 @use '../settings/breakpoints.scss' as b;
 
 .hero {
-  width: 100dvw;
-  height: 100dvh;
-  background-image: url('/wp-content/themes/portfolio/resources/img/background_capybara.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   @include b.mobile {
     justify-content: space-between;
   }
@@ -15,40 +9,27 @@
     width: 100%;
   }
 
-  &-title {
-    color: var(--foreground-color);
-    margin-top: 5%;
-    margin-bottom: 5%;
-    gap: 0.5em;
+  &-fig {
     position: relative;
+  }
+
+  &-image {
+    width: 100dvw;
+    height: 100dvh;
+    object-fit: cover;
+
+  }
+
+  &-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     z-index: 1;
-    @include b.tablet-up {
-      font-size: 9rem;
-    }
-    @include b.mobile {
-
-    }
-
-    &-fn {
-
-      @include b.mobile-up {
-
-      }
-    }
-
-    &-ln {
-      margin-right: 2%;
-      @include b.widescreen {
-        margin-right: 10%;
-      }
-    }
-
-    &-title {
-
-      @include b.tablet-up {
-        font-size: 5rem;
-      }
-
+    transform: translate(-50%, -50%);
+    color: var(--foreground-color);
+    @include b.desktop-up {
+      font-size: 8.75rem;
+      line-height: 1;
     }
   }
 }
@@ -92,7 +73,7 @@
   position: absolute;
   bottom: 2%;
   left: 10%;
-  z-index: 0;
+  z-index: 1;
   @include b.mobile {
     bottom: 10%;
   }
@@ -133,7 +114,8 @@
     @include b.desktop-up {
       gap: 3em;
       flex-direction: row;
-      justify-content: space-evenly;
+      margin-right: 10%;
+      //justify-content: space-around;
     }
 
     &-content {

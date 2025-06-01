@@ -12,6 +12,18 @@
 			</figure>
 		</div>
 		<div class="hero-container">
+<?php if (have_rows('layout')): while (have_rows('layout')):
+    the_row(); ?>
+            <?php
+            $image = get_sub_field( 'background-image' );
+            if ( ! empty( $image ) ): ?>
+			<figure class="hero-fig">
+				<div class="hero-deco"></div>
+                <?= responsive_image( $image, [
+                    'lazy'  => 'lazy',
+                    'class' => 'hero-image',
+                ] ) ?>
+                <?php endif ?>
 			<h2 class="hero-title font-title flex flex-col text-5xl">
 				<strong class="hero-title-fn flex justify-center">
 					Bruno
@@ -23,6 +35,7 @@
 					Web Developer
 				</strong>
 			</h2>
+<?php endwhile; endif; ?>
 		</div>
 		<a href="#about" class="anchor font-title flex flex-row justify-center content-center">Scroll Down</a>
 	</section>
@@ -131,7 +144,7 @@
                                                 <?php the_sub_field('resume'); ?>
 											</div>
 										</div>
-										<p class="article-more">See more</p>
+										<p class="article-more font-title">See more</p>
 									</div>
 								</div>
 							</div>

@@ -125,10 +125,10 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<figure class="article-fig">
+										<figure class="article-fig" itemprop="image">
                                             <?php if (has_post_thumbnail()): ?>
-												<img src="<?= get_the_post_thumbnail_url(); ?>" class="article-image"
-												     alt="<?php the_title(); ?>" itemprop="image"/>
+                                                <?= get_the_post_thumbnail(null, 'blog-small',
+                                                    ['class' => 'article-image']) ?>
                                             <?php endif; ?>
 										</figure>
 										<h3 class="article-title font-title" itemprop="name">

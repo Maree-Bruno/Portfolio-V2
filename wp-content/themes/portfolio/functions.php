@@ -228,6 +228,9 @@ function responsive_image( $image, $settings ): bool|string {
     $image_post = get_post( $image_id ); // Object WP_Post de l'image
     $title      = $image_post->post_title ?? '';
     $name       = $image_post->post_name ?? '';
+    $metadata = wp_get_attachment_metadata( $image_id );
+    $width    = $metadata['width'] ?? '';
+    $height   = $metadata['height'] ?? '';
 
 // Récupération des URLS et attributs pour l'image en taille "full"
 // Wordpress génère automatiquement un srcset basé sur les tailles existantes
@@ -256,6 +259,8 @@ function responsive_image( $image, $settings ): bool|string {
             loading="<?= esc_attr( $lazy ) ?>"
             srcset="<?= esc_attr( $srcset ) ?>"
             sizes="<?= esc_attr( $sizes ) ?>"
+            width="<?= esc_attr( $width ) ?>"
+            height="<?= esc_attr( $height ) ?>"
             class="<?= esc_attr( $class ) ?>">
     </picture>
     <?php

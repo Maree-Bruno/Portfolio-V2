@@ -2,18 +2,22 @@
 @font-face {
   font-family: 'League Spartan';
   src: url('/wp-content/themes/portfolio/resources/fonts/LeagueSpartan-Bold.otf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Titillium Web Bold';
   src: url('/wp-content/themes/portfolio/resources/fonts/TitilliumWeb-Bold.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Titillium Web Regular';
   src: url('/wp-content/themes/portfolio/resources/fonts/TitilliumWeb-Regular.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Beth Ellen Regular';
   src: url('/wp-content/themes/portfolio/resources/fonts/BethEllen-Regular.ttf');
+  font-display: swap;
 }
 .font-title{
   font-family: "League Spartan", sans-serif;

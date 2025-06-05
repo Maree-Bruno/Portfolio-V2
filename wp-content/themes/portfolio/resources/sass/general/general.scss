@@ -15,4 +15,5 @@
 body{
   background: var(--background-color);
   scroll-behavior: smooth;
+  @extend .font-text;
 }

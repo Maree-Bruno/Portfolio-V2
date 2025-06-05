@@ -2,7 +2,7 @@
 
 .hero {
   @include b.mobile {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   &-container {
@@ -97,25 +97,30 @@
 
   &-container {
     gap: 3em;
-    @include b.desktop-up {
+    @include b.desktopxl-up {
       flex-direction: row;
     }
   }
 }
 
 .about {
-  margin: 5% 7%;
+  margin: 100px 7% 2% 7%;
   gap: 3em;
-
+  &-front-capybara{
+    position: absolute;
+    top: -25%;
+    z-index: -1;
+    animation: upanddown var(--bouncing-timing) infinite;
+  }
   &-main {
     gap: 3em;
     @include b.tablet-up {
     }
-    @include b.desktop-up {
+    @include b.widescreen {
       gap: 3em;
       flex-direction: row;
       margin-right: 10%;
-      //justify-content: space-around;
+      justify-content: space-around;
     }
 
     &-content {
@@ -127,7 +132,7 @@
       @include b.tablet-desktop {
         flex-direction: row;
       }
-      @include b.desktop {
+      @include b.desktop-up {
         margin-left: 3%;
         flex-direction: row;
       }
@@ -148,7 +153,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     min-width: 300px;
     position: relative;
-
     &:after {
       content: 'XOXO';
       @extend .font-sm;
@@ -158,6 +162,7 @@
       rotate: -30deg;
       color: var(--foreground-color);
     }
+
   }
 
   &-img {
@@ -213,7 +218,7 @@
   }
 
   &-career {
-    margin: 0 3%;
+    margin: 0 7% 10% 7%;
     gap: 2em;
     @include b.mobile {
       gap: 1em;

@@ -76,6 +76,7 @@
     }
 
     &-fig {
+      position: relative;
       max-width: 300px;
       max-height: 225px;
       background: var(--foreground-color);
@@ -103,6 +104,7 @@
     max-height: fit-content;
     @include b.tablet-up {
       flex-direction: row;
+      justify-content: space-around;
     }
 
     &-content {
@@ -144,6 +146,15 @@
       }
     }
   }
+  .single-project-colors-item.light-bg {
+    color: #000;
+    border: 2px solid #000;
+  }
+
+  .single-project-colors-item.dark-bg {
+    color: #fff;
+    border: 1px solid #fff;
+  }
 
   &-gallery {
     gap: 2em;
@@ -154,6 +165,7 @@
     @include b.desktop-up {
       flex-direction: row;
       gap: 5em;
+      justify-content: space-around;
     }
 
     &-sticky {

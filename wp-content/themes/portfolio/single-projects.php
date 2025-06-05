@@ -71,11 +71,11 @@
                                     if ($images): ?>
 										<div class="single-project-gallery-list">
                                             <?php foreach ($images as $image): ?>
-												<a href="<?= esc_url($image['sizes']['large']); ?>"
+												<a href="<?= esc_url($image['sizes']['large']) ?>"
 												   data-fancybox="gallery"
 												   class="single-actuality-gallery-link"
 												   itemprop="associatedMedia" itemscope
-												   itemtype="http://schema.org/ImageObject">
+												   itemtype="https://schema.org/ImageObject">
 													<figure class="single-project-gallery-fig">
 														<meta itemprop="contentUrl"
 														      content="<?= esc_url($image['url']) ?>">

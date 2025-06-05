@@ -25,15 +25,23 @@
 						</div>
 					</div>
 					<figure class="single-project-content-fig flex justify-center">
+						<div class="about-front-capybara">
+							<figure class="about-front-capybara-figure">
+								<img class="about-front-capybara-img"
+								     src="/wp-content/themes/portfolio/resources/img/capybara-front-320w.png"
+								     alt="un capybara" width="320" height="213"
+							</figure>
+						</div>
                         <?php
                         $image = get_sub_field('image1');
                         if (!empty($image)):
                             $image_url = $image['sizes']['blog-medium'];
                             ?>
-							<img src="<?= esc_url($image_url) ?>"
-							     alt="<?= esc_attr($image['alt']) ?>"
-							     itemprop="image"
-							     class="single-project-content-img"/>
+                            <?= responsive_image($image, [
+                            'lazy' => 'lazy',
+                            'class' => 'single-project-content-img',
+                        ]) ?>
+
                         <?php endif; ?>
 					</figure>
 				</div>
@@ -66,9 +74,11 @@
 												<a href="<?= esc_url($image['sizes']['large']); ?>"
 												   data-fancybox="gallery"
 												   class="single-actuality-gallery-link"
-												   itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+												   itemprop="associatedMedia" itemscope
+												   itemtype="http://schema.org/ImageObject">
 													<figure class="single-project-gallery-fig">
-														<meta itemprop="contentUrl" content="<?= esc_url($image['url']) ?>">
+														<meta itemprop="contentUrl"
+														      content="<?= esc_url($image['url']) ?>">
                                                         <?= responsive_image($image,
                                                             ['lazy' => 'lazy', 'class' => 'single-project-gallery-img']
                                                         ) ?>
@@ -83,13 +93,16 @@
 
 							<div class="single-project-links flex flex-row justify-between content-center">
                                 <?php if (get_sub_field('website_link')): ?>
-									<a href="<?php the_sub_field('website_link') ?>" itemprop="url" title="Visit the website" class="single-project-link font-title">Website</a>
+									<a href="<?php the_sub_field('website_link') ?>" itemprop="url"
+									   title="Visit the website" class="single-project-link font-title">Website</a>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('figma')): ?>
-									<a href="<?php the_sub_field('figma') ?>" itemprop="url" title="Visit the figma" class="single-project-link single-project-link-figma font-title">Figma</a>
+									<a href="<?php the_sub_field('figma') ?>" itemprop="url" title="Visit the figma"
+									   class="single-project-link single-project-link-figma font-title">Figma</a>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('website_link-github')): ?>
-									<a href="<?php the_sub_field('website_link-github') ?>" itemprop="url" title="Visit github repository" class="single-project-link font-title">Github</a>
+									<a href="<?php the_sub_field('website_link-github') ?>" itemprop="url"
+									   title="Visit github repository" class="single-project-link font-title">Github</a>
                                 <?php endif; ?>
 							</div>
 						</div>

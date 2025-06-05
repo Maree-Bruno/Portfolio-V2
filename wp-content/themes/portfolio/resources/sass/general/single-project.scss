@@ -76,6 +76,7 @@
     }
 
     &-fig {
+      position: relative;
       max-width: 300px;
       max-height: 225px;
       background: var(--foreground-color);

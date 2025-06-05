@@ -48,8 +48,11 @@
     height: auto;
     margin: 5% 0;
     background-color: whitesmoke;
-    @include b.desktopxl-up {
+    @include b.desktop-up {
       max-width: 350px;
+      height: auto;
+      max-height: 220px;
+      object-fit: contain;
     }
   }
 
@@ -116,7 +119,7 @@
   margin: 5% 0;
 
   &-container {
-    margin: 0 7% 7%;
+    margin: 0 100px 0 100px;
   }
 }
 
@@ -164,8 +167,8 @@
       gap: 1em;
       background-color: #1F1013;
       color: var(--foreground-color);
-      min-height: 240px;
-      max-height: 240px;
+      min-height: 220px;
+      max-height: 220px;
       margin: 20px 10px 0 10px;
     }
   }

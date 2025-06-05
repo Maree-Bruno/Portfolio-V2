@@ -4,7 +4,7 @@
  */
 ?>
 <?php get_header(); ?>
-<section class="hero flex flex-col content-center justify-between" itemscope itemtype="https://schema.org/Person">
+<section class="hero flex flex-col content-center justify-around" itemscope itemtype="https://schema.org/Person">
 	<div class="capybara">
 		<figure class="capybara-figure">
 			<img class="capybara-img" src="/wp-content/themes/portfolio/resources/img/capybara-320w.png"
@@ -24,13 +24,12 @@
 				</figure>
             <?php endif ?>
 			<h2 class="hero-title font-title flex flex-col text-5xl">
-				<strong class="hero-title-fn flex justify-center" itemprop="givenName">Bruno</strong>
-				<strong class="hero-title-ln flex justify-end" itemprop="familyName">Marée</strong>
-				<strong class="hero-title-title text-3xl flex justify-center" itemprop="jobTitle">Web Developer</strong>
+				<strong class="hero-title-fn flex" itemprop="givenName">Bruno</strong>
+				<strong class="hero-title-ln flex" itemprop="familyName">Marée</strong>
+				<strong class="hero-title-title text-3xl flex " itemprop="jobTitle">Web Developer</strong>
 			</h2>
         <?php endwhile; endif; ?>
 	</div>
-	<a href="#about" class="anchor font-title flex flex-row justify-center content-center">Scroll Down</a>
 </section>
 <section class="about flex flex-col" id="about">
 	<h2 class="sr-only">About me</h2>
@@ -38,14 +37,22 @@
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php if (have_rows('layout')): while (have_rows('layout')): the_row(); ?>
                 <?php if (get_row_layout() === 'layout'): ?>
-					<div class="about-main-content flex flex-col content-center" itemprop="description">
+					<div class="about-main-content flex flex-col content-center justify-around" itemprop="description">
                         <?php $image = get_sub_field('profile_pic'); ?>
                         <?php if ($image): ?>
 							<figure class="about-fig" itemscope itemtype="https://schema.org/ImageObject">
-								<img src="<?php echo esc_url($image['sizes']['blog-medium']); ?>"
-								     alt="<?php echo esc_attr($image['alt']); ?>"
-								     class="about-img"
-								     itemprop="contentUrl"/>
+								<div class="about-front-capybara">
+									<figure class="about-front-capybara-figure">
+										<img class="about-front-capybara-img"
+										     src="/wp-content/themes/portfolio/resources/img/capybara-front-320w.png"
+										     alt="un capybara" width="320" height="213"
+									</figure>
+								</div>
+                                <?= responsive_image($image, [
+                                    'lazy' => 'lazy',
+                                    'class' => 'about-img',
+                                ]) ?>
+
                                 <?php get_template_part('includes/section', 'slider') ?>
 							</figure>
                         <?php endif; ?>

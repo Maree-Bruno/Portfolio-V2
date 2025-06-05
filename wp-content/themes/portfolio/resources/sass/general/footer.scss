@@ -1,23 +1,25 @@
 @use '../settings/breakpoints.scss' as b;
+
 .footer {
   border-top: 2px solid black;;
   background: var(--background-color);
   margin: 20px 10% 0 10%;
   padding-top: 20px;
-  @include b.tablet-up{
-    margin: 2% 3%;
+  @include b.tablet-up {
+    margin: 220px 3% 2% 3%;
   }
+
   &-content {
     justify-content: space-between;
     align-items: flex-start;
     @include b.tablet-up {
-     flex-direction: row;
+      flex-direction: row;
       justify-content: space-around;
     }
-    @include b.mobile-up{
+    @include b.mobile-up {
       gap: 2em;
     }
-    @include b.mobile{
+    @include b.mobile {
       gap: 2em;
     }
   }
@@ -44,7 +46,8 @@
         transition: all ease-in-out 0.5s;
         font-family: "League Spartan", sans-serif;
         text-decoration: none;
-        &:hover{
+
+        &:hover {
           color: var(--success);
         }
       }
@@ -56,6 +59,7 @@
     @include b.tablet-up {
       flex-direction: column;
     }
+
     &-link {
     }
 

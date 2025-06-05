@@ -1,6 +1,7 @@
 </div>
 </main>
 <footer class="footer" itemscope itemtype="https://schema.org/Person">
+
 	<h2 class="sr-only">Footer</h2>
 	<div class="footer-content flex flex-col">
 		<div class="footer-section flex flex-col">

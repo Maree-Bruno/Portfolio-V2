@@ -1,6 +1,6 @@
 </div>
 </main>
-<footer class="footer">
+<footer class="footer" itemscope itemtype="https://schema.org/Person">
 	<h2 class="sr-only">Footer</h2>
 	<div class="footer-content flex flex-col">
 		<div class="footer-section flex flex-col">
@@ -14,7 +14,7 @@
 			<h3 class="footer-section-title text-2xl">Navigation</h3>
 			<ul class="flex flex-col justify-between footer-section-list">
                 <?php foreach (portfolio_get_navigation_links('main') as $link): ?>
-					<li><a href="<?= $link->url ?>" class="footer-section-content-link link"><?= $link->label
+					<li><a href="<?= $link->url ?>" class="footer-section-content-link link" itemprop="url"><?= $link->label
                             ?></a></li>
                 <?php endforeach; ?>
 			</ul>
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="footer-social flex flex-row justify-between">
-			<a href="https://github.com/Maree-Bruno" class="footer-social-link footer-social-icon "><span
+			<a href="https://github.com/Maree-Bruno" class="footer-social-link footer-social-icon" itemprop="sameAs"><span
 						class="hidden">Github</span>
 				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
 				     class="footer-social-icon github">
@@ -55,7 +55,7 @@
 
 			</a>
 			<a href="https://www.linkedin.com/in/bruno-mar%C3%A9e-0148b2251/"
-			   class="footer-social-link icon"><span class="hidden">Linkedin</span>
+			   class="footer-social-link icon" itemprop="sameAs"><span class="hidden" >Linkedin</span>
 				<svg class="footer-social-icon linkedin" width="40" height="40" viewBox="0 0 40 40" fill="none"
 				     xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd"
@@ -69,7 +69,7 @@
 					      fill="#007BB5"/>
 				</svg>
 			</a>
-			<a href="https://www.instagram.com/bru.m3/" class="footer-social-link icon">
+			<a href="https://www.instagram.com/bru.m3/" class="footer-social-link icon" itemprop="sameAs">
 				<span class="hidden">Instagram</span>
 				<svg class="footer-social-icon  instagram" width="40" height="40" viewBox="0 0 40 40" fill="none"
 				     xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +96,7 @@
 					</defs>
 				</svg>
 			</a>
-			<a href="https://discord.com" class="footer-social-link icon">
+			<a href="https://discord.com" class="footer-social-link icon" itemprop="sameAs">
 				<span class="hidden">Discord</span>
 				<svg class="footer-social-icon discord" width="40" height="40" viewBox="0 0 40 40" fill="none"
 				     xmlns="http://www.w3.org/2000/svg">

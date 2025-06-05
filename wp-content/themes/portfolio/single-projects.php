@@ -1,11 +1,9 @@
 <?php get_header(); ?>
-<?php if (have_rows('layout')):while (have_rows('layout')):
-    the_row();
+<?php if (have_rows('layout')): while (have_rows('layout')): the_row();
     if (get_row_layout() === 'layout'): ?>
-		<section class="single-project">
-			<h2 itemprop="name"
-			    class="single-project-title title font-title text-2xl"><?php the_sub_field('project_title')
-                ?>
+		<section class="single-project" itemscope itemtype="https://schema.org/CreativeWork">
+			<h2 itemprop="name" class="single-project-title title font-title text-2xl">
+                <?php the_sub_field('project_title') ?>
 			</h2>
 			<div class="single-project-content flex flex-col">
 				<div class="single-project-presentation flex flex-col-reverse justify-between content-center">
@@ -14,14 +12,16 @@
                             <?php if ($brands = get_the_terms(get_the_ID(), 'brands')): ?>
 								<ul class="tag-list">
                                     <?php foreach ($brands as $term): ?>
-										<li class="tag-item font-text"><?= $term->name; ?></li>
+										<li class="tag-item font-text" itemprop="genre"><?= $term->name; ?></li>
                                     <?php endforeach; ?>
 								</ul>
                             <?php endif; ?>
 						</div>
 						<div class="single-project-content-text">
 							<h3 class="single-project-content-title font-title text-lg">Summary</h3>
-                            <?php the_sub_field('project_presentation1') ?>
+							<div itemprop="description">
+                                <?php the_sub_field('project_presentation1') ?>
+							</div>
 						</div>
 					</div>
 					<figure class="single-project-content-fig flex justify-center">
@@ -31,27 +31,27 @@
                             $image_url = $image['sizes']['blog-medium'];
                             ?>
 							<img src="<?= esc_url($image_url) ?>"
-							     alt="<?= esc_attr($image['alt']) ?>" itemprop="image"
+							     alt="<?= esc_attr($image['alt']) ?>"
+							     itemprop="image"
 							     class="single-project-content-img"/>
                         <?php endif; ?>
 					</figure>
 				</div>
+
 				<div class="single-project-colors">
                     <?php if (have_rows('color')): ?>
 						<ul class="single-project-colors-list flex flex-row flex-1 justify-between content-center">
                             <?php while (have_rows('color')): the_row();
-                                $color_code = get_sub_field('color-code');
-                                ?>
+                                $color_code = get_sub_field('color-code'); ?>
 								<li class="single-project-colors-item text-lg"
-								    style="background-color: <?php echo esc_attr
-                                    ($color_code); ?>;">
+								    style="background-color: <?php echo esc_attr($color_code); ?>;">
                                     <?php echo esc_html($color_code); ?>
 								</li>
                             <?php endwhile; ?>
 						</ul>
                     <?php endif; ?>
-
 				</div>
+
 				<section class="single-project-gallery flex flex-col">
 					<div class="single-project-gallery-sticky">
 						<div class="single-project-gallery-display flex flex-col justify-center content-center">
@@ -63,45 +63,47 @@
                                     if ($images): ?>
 										<div class="single-project-gallery-list">
                                             <?php foreach ($images as $image): ?>
-												<figure class="single-project-gallery-fig">
-													<img src="<?php echo esc_url($image['sizes']['blog-medium']); ?>"
-													     alt="<?php echo esc_attr($image['alt']); ?>"
-													     class="single-project-gallery-img"/>
-												</figure>
+												<a href="<?= esc_url($image['sizes']['large']); ?>"
+												   data-fancybox="gallery"
+												   class="single-actuality-gallery-link"
+												   itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+													<figure class="single-project-gallery-fig">
+														<meta itemprop="contentUrl" content="<?= esc_url($image['url']) ?>">
+                                                        <?= responsive_image($image,
+                                                            ['lazy' => 'lazy', 'class' => 'single-project-gallery-img']
+                                                        ) ?>
+													</figure>
+												</a>
                                             <?php endforeach; ?>
 										</div>
                                     <?php endif; ?>
 								</div>
 								<p class="single-project-gallery-scroll font-title">Gallery</p>
 							</div>
+
 							<div class="single-project-links flex flex-row justify-between content-center">
                                 <?php if (get_sub_field('website_link')): ?>
-									<a href="<?php the_sub_field('website_link') ?>" itemprop="url" title="Visit the
-									website" class="single-project-link font-title">Website</a>
+									<a href="<?php the_sub_field('website_link') ?>" itemprop="url" title="Visit the website" class="single-project-link font-title">Website</a>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('figma')): ?>
-									<a href="<?php the_sub_field('figma') ?>" itemprop="url" title="Visit the figma"
-									   class="single-project-link single-project-link-figma
-		                            font-title">Figma</a>
+									<a href="<?php the_sub_field('figma') ?>" itemprop="url" title="Visit the figma" class="single-project-link single-project-link-figma font-title">Figma</a>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('website_link-github')): ?>
-									<a href="<?php the_sub_field('website_link-github') ?>" itemprop="url" title="Visit
-								github repository" class="single-project-link font-title">Github</a>
+									<a href="<?php the_sub_field('website_link-github') ?>" itemprop="url" title="Visit github repository" class="single-project-link font-title">Github</a>
                                 <?php endif; ?>
 							</div>
 						</div>
 					</div>
+
 					<div class="single-project-features flex flex-col justify-end">
-						<h3 class="single-project-features-title font-title text-lg">
-							Features
-						</h3>
+						<h3 class="single-project-features-title font-title text-lg">Features</h3>
                         <?php if (have_rows('features')): ?>
 							<ul class="single-project-features-list flex flex-col">
                                 <?php while (have_rows('features')): the_row(); ?>
-									<h4 class="single-project-features-title font-title "><?php the_sub_field('title');
-                                        ?></h4>
-									<li class="single-project-features-item font-text">
-                                        <?php the_sub_field('feature'); ?></li>
+									<h4 class="single-project-features-title font-title"><?php the_sub_field('title'); ?></h4>
+									<li class="single-project-features-item font-text" itemprop="featureList">
+                                        <?php the_sub_field('feature'); ?>
+									</li>
                                 <?php endwhile; ?>
 							</ul>
                         <?php endif; ?>
@@ -110,5 +112,5 @@
 			</div>
 		</section>
     <?php endif;
-endwhile;endif; ?>
+endwhile; endif; ?>
 <?php get_footer(); ?>

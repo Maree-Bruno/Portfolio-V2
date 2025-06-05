@@ -4,7 +4,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="page-form flex flex-col">
+<section class="page-form flex flex-col">
 	<h2 aria-level="1" class="page-form-title font-title title"> Contact</h2>
     <?php
     $feedback = portfolio_session_get('portfolio_contact_form_feedback') ?? false;

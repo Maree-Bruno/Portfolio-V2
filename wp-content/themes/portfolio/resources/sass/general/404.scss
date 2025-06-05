@@ -1,0 +1,42 @@
+@use '../settings/breakpoints.scss' as b;
+.error-page {
+  background-image: url("/wp-content/themes/portfolio/resources/img/background_capybara.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  max-width: 100dvw;
+  min-height: 100vh;
+  color: var(--foreground-color);
+  gap: 4em;
+  padding: 0 7%;
+  &-title{
+    text-align: center;
+    @extend .text-4xl;
+    @include b.desktop-up{
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+  &-container{
+    gap: 4em;
+  }
+  &-text{
+    @extend .text-lg;
+    @include b.desktop-up{
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+  &-link {
+    color: var(--foreground-color);
+    text-decoration: none;
+    @extend .text-lg;
+    @include b.desktop-up{
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    &:hover {
+      color: var(--success);
+    }
+  }
+}

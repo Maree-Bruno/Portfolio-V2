@@ -1,12 +1,13 @@
 @use '../settings/breakpoints.scss' as b;
 .footer {
+  border-top: 2px solid black;;
   background: var(--background-color);
-  margin: 0 10%;
+  margin: 20px 10% 0 10%;
+  padding-top: 20px;
   @include b.tablet-up{
     margin: 2% 3%;
   }
   &-content {
-
     justify-content: space-between;
     align-items: flex-start;
     @include b.tablet-up {

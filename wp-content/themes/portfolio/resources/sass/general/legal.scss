@@ -1,0 +1,44 @@
+@use '../settings/breakpoints.scss' as b;
+
+.legal {
+  gap: 1em;
+  margin: 20% 10px 5% 10px;
+  @include b.desktop-up{
+    max-width: 800px;
+    margin: 5% auto;
+
+  }
+
+  &-title {
+    margin-bottom: 5%;
+  }
+
+  &-description {
+    align-self: flex-start;
+    @extend .text-xl
+  }
+
+  &-ul {
+    counter-reset: step 0;
+    gap: 1.5em;
+  }
+
+  &-li {
+    &-title {
+      counter-increment: step;
+      @extend .text-3xl;
+
+      &:before {
+        content: counter(step) ". ";
+        color: var(--text);
+        @extend .font-title;
+        @extend .text-3xl;
+      }
+
+    }
+
+    &-description {
+      @extend .text-lg
+    }
+  }
+}

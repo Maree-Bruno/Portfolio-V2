@@ -1,7 +1,6 @@
 </div>
 </main>
-<footer class="footer" itemscope itemtype="https://schema.org/Person">
-
+<footer class="footer">
 	<h2 class="sr-only">Footer</h2>
 	<div class="footer-content flex flex-col">
 		<div class="footer-section flex flex-col">
@@ -15,7 +14,7 @@
 			<h3 class="footer-section-title text-2xl">Navigation</h3>
 			<ul class="flex flex-col justify-between footer-section-list">
                 <?php foreach (portfolio_get_navigation_links('main') as $link): ?>
-					<li><a href="<?= $link->url ?>" class="footer-section-content-link link" itemprop="url"><?= $link->label
+					<li><a href="<?= $link->url ?>" class="footer-section-content-link link"><?= $link->label
                             ?></a></li>
                 <?php endforeach; ?>
 			</ul>
@@ -31,7 +30,7 @@
 			</div>
 		</div>
 		<div class="footer-social flex flex-row justify-between">
-			<a href="https://github.com/Maree-Bruno" class="footer-social-link footer-social-icon" itemprop="sameAs"><span
+			<a href="https://github.com/Maree-Bruno" class="footer-social-link footer-social-icon "><span
 						class="hidden">Github</span>
 				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
 				     class="footer-social-icon github">
@@ -56,7 +55,7 @@
 
 			</a>
 			<a href="https://www.linkedin.com/in/bruno-mar%C3%A9e-0148b2251/"
-			   class="footer-social-link icon" itemprop="sameAs"><span class="hidden" >Linkedin</span>
+			   class="footer-social-link icon"><span class="hidden">Linkedin</span>
 				<svg class="footer-social-icon linkedin" width="40" height="40" viewBox="0 0 40 40" fill="none"
 				     xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd"
@@ -70,7 +69,7 @@
 					      fill="#007BB5"/>
 				</svg>
 			</a>
-			<a href="https://www.instagram.com/bru.m3/" class="footer-social-link icon" itemprop="sameAs">
+			<a href="https://www.instagram.com/bru.m3/" class="footer-social-link icon">
 				<span class="hidden">Instagram</span>
 				<svg class="footer-social-icon  instagram" width="40" height="40" viewBox="0 0 40 40" fill="none"
 				     xmlns="http://www.w3.org/2000/svg">
@@ -95,26 +94,6 @@
 							<stop offset="1" stop-color="#8E40B7"/>
 						</radialGradient>
 					</defs>
-				</svg>
-			</a>
-			<a href="https://discord.com" class="footer-social-link icon" itemprop="sameAs">
-				<span class="hidden">Discord</span>
-				<svg class="footer-social-icon discord" width="40" height="40" viewBox="0 0 40 40" fill="none"
-				     xmlns="http://www.w3.org/2000/svg">
-					<path d="M39 19.9977C39 30.4898 30.4935 38.9955 20 38.9955C9.50648 38.9955 1 30.4898 1 19.9977C1 9.50568 9.50648 1 20 1C30.4935 1 39 9.50568 39 19.9977Z"
-					      stroke="black" stroke-width="2"/>
-					<path d="M28.6819 13.5257C28.6819 13.5257 26.207 11.5892 23.284 11.3669L23.0206 11.8935C25.6633 12.5402 26.8757 13.4668 28.1419 14.6051C25.9584 13.4906 23.8026 12.4462 20.0453 12.4462C16.288 12.4462 14.132 13.4906 11.9488 14.6051C13.2151 13.4668 14.6573 12.438 17.07 11.8935L16.8066 11.3669C13.7404 11.6567 11.4091 13.5257 11.4091 13.5257C11.4091 13.5257 8.64496 17.5331 8.17041 25.3995C10.9568 28.6122 15.1875 28.6376 15.1875 28.6376L16.0722 27.4583C14.5706 26.9364 12.8746 26.0043 11.4091 24.32C13.157 25.6422 15.7948 27.0186 20.0455 27.0186C24.2962 27.0186 26.934 25.6423 28.6819 24.32C27.2164 26.0043 25.5204 26.9366 24.0188 27.4583L24.9035 28.6376C24.9035 28.6376 29.1342 28.6122 31.9206 25.3993C31.446 17.5331 28.6819 13.5257 28.6819 13.5257ZM16.537 23.2406C15.4935 23.2406 14.6477 22.274 14.6477 21.0818C14.6477 19.8895 15.4935 18.9229 16.537 18.9229C17.5804 18.9229 18.4262 19.8895 18.4262 21.0818C18.4262 22.274 17.5804 23.2406 16.537 23.2406ZM23.554 23.2406C22.5106 23.2406 21.6648 22.274 21.6648 21.0818C21.6648 19.8895 22.5106 18.9229 23.554 18.9229C24.5975 18.9229 25.4433 19.8895 25.4433 21.0818C25.4433 22.274 24.5973 23.2406 23.554 23.2406Z"
-					      fill="black"/>
-				</svg>
-				<svg class="footer-social-icon-hover discord" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-				     viewBox="0 0 40 40" fill="none">
-					<path d="M20 39.9955C31.0457 39.9955 40 31.0422 40 19.9977C40 8.95329 31.0457 0 20 0C8.9543 0 0 8.95329 0 19.9977C0 31.0422 8.9543 39.9955 20 39.9955Z"
-					      fill="#8C9EFF"/>
-					<path d="M28.6819 13.5257C28.6819 13.5257 26.207 11.5892 23.284 11.3669L23.0206 11.8935C25.6633 12.5402 26.8757 13.4668 28.1419 14.6051C25.9584 13.4906 23.8026 12.4462 20.0453 12.4462C16.288 12.4462 14.132 13.4906 11.9488 14.6051C13.2151 13.4668 14.6573 12.438 17.07 11.8935L16.8066 11.3669C13.7404 11.6567 11.4091 13.5257 11.4091 13.5257C11.4091 13.5257 8.64496 17.5331 8.17041 25.3995C10.9568 28.6122 15.1875 28.6376 15.1875 28.6376L16.0722 27.4583C14.5706 26.9364 12.8746 26.0043 11.4091 24.32C13.157 25.6422 15.7948 27.0186 20.0455 27.0186C24.2962 27.0186 26.934 25.6423 28.6819 24.32C27.2164 26.0043 25.5204 26.9366 24.0188 27.4583L24.9035 28.6376C24.9035 28.6376 29.1342 28.6122 31.9206 25.3993C31.446 17.5331 28.6819 13.5257 28.6819 13.5257ZM16.537 23.2406C15.4935 23.2406 14.6477 22.274 14.6477 21.0818C14.6477 19.8895 15.4935 18.9229 16.537 18.9229C17.5804 18.9229 18.4262 19.8895 18.4262 21.0818C18.4262 22.274 17.5804 23.2406 16.537 23.2406ZM23.554 23.2406C22.5106 23.2406 21.6648 22.274 21.6648 21.0818C21.6648 19.8895 22.5106 18.9229 23.554 18.9229C24.5975 18.9229 25.4433 19.8895 25.4433 21.0818C25.4433 22.274 24.5973 23.2406 23.554 23.2406Z"
-					      fill="white"/>
-					<path opacity="0.1"
-					      d="M5.85791 34.1428C9.47718 37.7617 14.4772 40 20.0001 40C31.0457 40 40.0001 31.0466 40.0001 20.0023C40.0001 14.48 37.7615 9.48056 34.1423 5.86169L5.85791 34.1428Z"
-					      fill="#4D4D4D"/>
 				</svg>
 			</a>
 		</div>

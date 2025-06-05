@@ -55,7 +55,7 @@
   }
 
   &-social {
-    gap: 0.5em;
+    gap: 2em;
     @include b.tablet-up {
       flex-direction: column;
     }
@@ -65,7 +65,7 @@
 
     &-icon {
       width: 30px;
-      height: auto;
+      height: 30px;
     }
   }
 }
@@ -92,7 +92,6 @@
 
 
 .footer-social-icon-hover.instagram,
-.footer-social-icon-hover.discord,
 .footer-social-icon-hover.linkedin {
   opacity: 0;
 
@@ -106,9 +105,5 @@
 }
 
 .footer-social-icon.instagram:hover {
-  opacity: 0;
-}
-
-.footer-social-icon.discord:hover {
   opacity: 0;
 }

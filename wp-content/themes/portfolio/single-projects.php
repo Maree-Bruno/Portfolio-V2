@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 <?php if (have_rows('layout')): while (have_rows('layout')): the_row();
     if (get_row_layout() === 'layout'): ?>
-		<section class="single-project" itemscope itemtype="https://schema.org/CreativeWork">
+		<section class="single-project flex flex-col justify-center content-center" itemscope
+		         itemtype="https://schema.org/CreativeWork">
 			<h2 itemprop="name" class="single-project-title title font-title text-2xl">
                 <?php the_sub_field('project_title') ?>
 			</h2>

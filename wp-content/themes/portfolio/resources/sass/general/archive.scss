@@ -20,7 +20,10 @@
 }
 
 .archive-filter {
-  margin: 5% 200px;
+  margin: 50px 60px;
+  @include b.desktop-up {
+    margin: 5% 200px;
+  }
 
   &-tag {
     &-list {
@@ -46,16 +49,19 @@
         font-size: 0.7em;
       }
       transition: background-color var(--animation-timing), box-shadow var(--animation-timing);
-      &:hover{
+
+      &:hover {
         background-color: var(--foreground-color);
         box-shadow: 0 0 0 2px var(--success);
 
       }
+
       &--active {
         background-color: var(--foreground-color);
         box-shadow: 0 0 0 2px var(--success);
         transition: background-color var(--animation-timing);
-        &:hover{
+
+        &:hover {
           background-color: var(--success);
         }
 
@@ -67,13 +73,16 @@
       color: var(--foreground-color);
       text-decoration: none;
       transition: color var(--animation-timing);
-      &:hover{
+
+      &:hover {
         color: var(--success);
       }
+
       &--active {
         color: var(--success);
         transition: color var(--animation-timing);
-        &:hover{
+
+        &:hover {
           color: var(--foreground-color);
         }
       }

@@ -56,7 +56,7 @@ $projects = new WP_Query($args);
 					<li class="archive-filter-tag-item font-text <?= ($current_filter === $term->slug) ? 'archive-filter-tag-item--active' : ''; ?>"
 					    itemprop="genre">
 						<a class="archive-filter-tag-link <?= ($current_filter === $term->slug) ? 'archive-filter-tag-link--active' : ''; ?>"
-						   href="<?= esc_url($projects_page_url.'?filter='.$term->slug); ?>">
+						   href="<?= esc_url($projects_page_url.'?filter='.$term->slug); ?>" >
                             <?= esc_html($term->name); ?>
 						</a>
 					</li>

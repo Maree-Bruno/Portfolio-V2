@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="footer-social flex flex-row justify-between">
-			<a href="https://github.com/Maree-Bruno" class="footer-social-link footer-social-icon "><span
+			<a href="https://github.com/Maree-Bruno" class="footer-social-link footer-social-icon " target="_blank"><span
 						class="hidden">Github</span>
 				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
 				     class="footer-social-icon github">
@@ -55,7 +55,7 @@
 
 			</a>
 			<a href="https://www.linkedin.com/in/bruno-mar%C3%A9e-0148b2251/"
-			   class="footer-social-link icon"><span class="hidden">Linkedin</span>
+			   class="footer-social-link icon" target="_blank"><span class="hidden">Linkedin</span>
 				<svg class="footer-social-icon linkedin" width="40" height="40" viewBox="0 0 40 40" fill="none"
 				     xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd"
@@ -69,7 +69,7 @@
 					      fill="#007BB5"/>
 				</svg>
 			</a>
-			<a href="https://www.instagram.com/bru.m3/" class="footer-social-link icon">
+			<a href="https://www.instagram.com/bru.m3/" class="footer-social-link icon" target="_blank">
 				<span class="hidden">Instagram</span>
 				<svg class="footer-social-icon  instagram" width="40" height="40" viewBox="0 0 40 40" fill="none"
 				     xmlns="http://www.w3.org/2000/svg">

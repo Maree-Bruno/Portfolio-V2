@@ -95,15 +95,16 @@
 							<div class="single-project-links flex flex-row justify-between content-center">
                                 <?php if (get_sub_field('website_link')): ?>
 									<a href="<?php the_sub_field('website_link') ?>" itemprop="url"
-									   title="Visit the website" class="single-project-link font-title">Website</a>
+									   title="Visit the website" class="single-project-link font-title" target="_blank">Website</a>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('figma')): ?>
 									<a href="<?php the_sub_field('figma') ?>" itemprop="url" title="Visit the figma"
-									   class="single-project-link single-project-link-figma font-title">Figma</a>
+									   class="single-project-link single-project-link-figma font-title" target="_blank">Figma</a>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('website_link-github')): ?>
 									<a href="<?php the_sub_field('website_link-github') ?>" itemprop="url"
-									   title="Visit github repository" class="single-project-link font-title">Github</a>
+									   title="Visit github repository" class="single-project-link font-title" target="_blank"
+									>Github</a>
                                 <?php endif; ?>
 							</div>
 						</div>

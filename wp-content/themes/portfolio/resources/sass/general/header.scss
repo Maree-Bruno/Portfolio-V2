@@ -29,7 +29,7 @@
       border-radius: 0 40px 40px 0;
       background: #FFF;
       border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.30);
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.30);
       max-height: 495px;
       list-style: none;
       translate: 0;
@@ -69,12 +69,12 @@
 .nav {
   &:hover {
     .nav-list-link-text {
-      @extend .not-sr-only; // Montre le texte au hover
+      @extend .not-sr-only;
     }
   }
 
   .nav-list-link-text {
-    @extend .sr-only; // Cache le texte par défaut
+    @extend .sr-only;
   }
 }
 

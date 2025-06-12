@@ -13,7 +13,7 @@
                             <?php if ($brands = get_the_terms(get_the_ID(), 'brands')): ?>
 								<ul class="tag-list">
                                     <?php foreach ($brands as $term): ?>
-										<li class="tag-item font-text" itemprop="genre"><?= $term->name; ?></li>
+										<li class="tag-item font-text text-lg" itemprop="genre"><?= $term->name; ?></li>
                                     <?php endforeach; ?>
 								</ul>
                             <?php endif; ?>
@@ -73,6 +73,7 @@
 										<div class="single-project-gallery-list">
                                             <?php foreach ($images as $image): ?>
 												<a href="<?= esc_url($image['sizes']['large']) ?>"
+												   title='Click on it to see the gallery'
 												   data-fancybox="gallery"
 												   class="single-actuality-gallery-link"
 												   itemprop="associatedMedia" itemscope
@@ -103,7 +104,8 @@
                                 <?php endif; ?>
                                 <?php if (get_sub_field('website_link-github')): ?>
 									<a href="<?php the_sub_field('website_link-github') ?>" itemprop="url"
-									   title="Visit github repository" class="single-project-link font-title" target="_blank"
+									   title="Visit github repository" class="single-project-link font-title"
+									   target="_blank"
 									>Github</a>
                                 <?php endif; ?>
 							</div>
@@ -115,9 +117,11 @@
                         <?php if (have_rows('features')): ?>
 							<ul class="single-project-features-list flex flex-col">
                                 <?php while (have_rows('features')): the_row(); ?>
-									<h4 class="single-project-features-title font-title"><?php the_sub_field('title'); ?></h4>
-									<li class="single-project-features-item font-text" itemprop="featureList">
-                                        <?php the_sub_field('feature'); ?>
+									<li class="single-project-features-item font-text" >
+										<h4 class="single-project-features-title font-title"><?php the_sub_field('title'); ?></h4>
+										<div class="single-project-features-item font-text " itemprop="featureList">
+                                            <?php the_sub_field('feature'); ?>
+										</div>
 									</li>
                                 <?php endwhile; ?>
 							</ul>

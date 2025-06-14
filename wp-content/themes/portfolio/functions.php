@@ -248,7 +248,6 @@ function responsive_image($image, $settings): bool|string
     if ( ! empty( $settings['class'] ) ) {
         $class = is_array( $settings['class'] ) ? implode( ' ', $settings['class'] ) : $settings['class'];
     }
-
     ob_start();
     ?>
 	<picture>
@@ -261,6 +260,7 @@ function responsive_image($image, $settings): bool|string
 				class="<?= esc_attr($class) ?>"
 				width="<?= esc_attr($width) ?>"
 				height="<?= esc_attr($height) ?>"
+
 		>
 	</picture>
     <?php

@@ -1,5 +1,6 @@
-import { Fancybox } from "@fancyapps/ui";
+import {Fancybox} from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
 function isLightBackground(bgColor) {
     const [r, g, b] = bgColor.match(/\d+/g).map(Number);
     return (r + g + b) / 3 > 127;
@@ -15,10 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function fancybox() {
-    document.addEventListener("DOMContentLoaded", function () {
-        Fancybox.bind('[data-fancybox="gallery"]', {});
-    });
-}
-
-fancybox();
+Fancybox.bind('[data-fancybox="gallery"]', {});
